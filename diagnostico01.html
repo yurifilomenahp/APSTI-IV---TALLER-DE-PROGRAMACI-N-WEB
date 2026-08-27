@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes Giratur</title>
+
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="movil.css" media="screen and (max-width:480px)">
+    <link rel="stylesheet" href="tablet.css" media="screen and (min-width:481px) and (max-width:760px)">
+    <link rel="stylesheet" href="pc.css" media="screen and (min-width:761px)">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #30261f;
+            background-color: white;
+        }
+
+        #encabezado {
+            width: 100%;
+        }
+
+        nav {
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            background-color: white;
+        }
+
+        #logo {
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        nav h1 {
+            font-size: 20px;
+            margin-left: -38%;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: #30261f;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        nav ul li a:hover {
+            color: #a9754b;
+        }
+
+        #imgsup {
+            min-height: 290px;
+            padding: 40px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f7f1eb;
+        }
+
+        #imgsup img {
+            width: 48%;
+            height: 205px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        #descripcion {
+            width: 45%;
+        }
+
+        #descripcion h1 {
+            font-size: 13px;
+            color: #a9754b;
+            letter-spacing: 1px;
+            margin: 5px 0 10px;
+            text-transform: uppercase;
+        }
+
+        #descripcion p {
+            font-size: 13px;
+            color: #6d665f;
+            line-height: 1.5;
+            margin: 8px 0;
+        }
+
+        #descripcion p:first-of-type {
+            font-size: 30px;
+            font-weight: bold;
+            color: #30261f;
+            line-height: 1.1;
+        }
+
+        .navbar-brand {
+            display: inline-block;
+            background-color: #a9754b;
+            color: white;
+            padding: 9px 17px;
+            border-radius: 3px;
+            text-decoration: none;
+            font-size: 10px;
+            margin-top: 8px;
+        }
+
+        .navbar-brand:hover {
+            background-color: #805738;
+        }
+
+        .navbar-toggler {
+            display: none;
+        }
+
+        #contenido {
+            width: 100%;
+        }
+
+        .programas {
+            padding: 45px 8%;
+            text-align: center;
+        }
+
+        .programas h1 {
+            font-size: 21px;
+            margin: 7px 0;
+        }
+
+        .programas>p {
+            font-size: 12px;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .col-lg-3 {
+            width: 33.33%;
+        }
+
+        .card {
+            background-color: #faf7f3;
+            text-align: left;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 115px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 12px;
+        }
+
+        .card-body h5 {
+            font-size: 13px;
+            margin: 0 0 7px;
+        }
+
+        .card-body p {
+            font-size: 10px;
+            color: #777;
+            margin: 7px 0;
+        }
+
+        .card-body p:last-child {
+            color: #a9754b;
+            font-weight: bold;
+        }
+
+        .boton {
+            margin-top: 25px;
+        }
+
+        .boton a {
+            display: inline-block;
+            padding: 9px 17px;
+            border: 1px solid #a9754b;
+            color: #8e603e;
+            text-decoration: none;
+            font-size: 10px;
+            border-radius: 3px;
+        }
+
+        .boton a:hover {
+            background-color: #a9754b;
+            color: white;
+        }
+
+        .programas:nth-child(2) {
+            background-color: #f7f1eb;
+            text-align: left;
+            min-height: 250px;
+        }
+
+        .programas:nth-child(2)>img {
+            width: 45%;
+            height: 205px;
+            object-fit: cover;
+            float: left;
+            margin-right: 45px;
+            border-radius: 6px;
+        }
+
+        .programas:nth-child(2) h1,
+        .programas:nth-child(2) p,
+        .programas:nth-child(2) .boton {
+            text-align: left;
+        }
+
+        .programas:nth-child(3) {
+            background-color: #eee2d6;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .programas:nth-child(3) img {
+            display: none;
+        }
+
+        .tarjetas {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .tarjeta {
+            width: 25%;
+            background-color: white;
+            padding: 22px 15px;
+            border-radius: 5px;
+            text-align: center;
+            min-height: 110px;
+        }
+
+        .tarjeta h3 {
+            font-size: 13px;
+            margin: 8px 0;
+        }
+
+        .tarjeta p {
+            font-size: 10px;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        .parte-final {
+            background-color: #30241e;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .parte-final h1 {
+            font-size: 21px;
+            margin: 0 0 10px;
+        }
+
+        .parte-final p {
+            font-size: 11px;
+            color: #ddd;
+        }
+
+        .parte-final a {
+            display: inline-block;
+            background-color: white;
+            color: #30241e;
+            text-decoration: none;
+            padding: 9px 18px;
+            font-size: 10px;
+            border-radius: 3px;
+            margin-top: 8px;
+        }
+
+        .parte-final a:hover {
+            background-color: #a9754b;
+            color: white;
+        }
+
+        footer {
+            background-color: #211914;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            font-size: 10px;
+        }
+
+        @media screen and (max-width: 760px) {
+
+            nav {
+                padding: 0 4%;
+            }
+
+            nav h1 {
+                margin-left: 0;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            #imgsup {
+                padding: 30px 5%;
+            }
+
+            #descripcion h1 {
+                font-size: 12px;
+            }
+
+            #descripcion p:first-of-type {
+                font-size: 24px;
+            }
+
+            .programas {
+                padding: 35px 5%;
+            }
+
+            .row {
+                flex-wrap: wrap;
+            }
+
+            .col-lg-3 {
+                width: 48%;
+            }
+
+            .tarjetas {
+                flex-wrap: wrap;
+            }
+
+            .tarjeta {
+                width: 48%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+
+            nav {
+                height: auto;
+                padding: 12px;
+                flex-wrap: wrap;
+            }
+
+            nav h1 {
+                margin-left: 0;
+                font-size: 18px;
+            }
+
+            nav ul {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            #imgsup {
+                display: block;
+                padding: 30px 20px;
+            }
+
+            #descripcion {
+                width: 100%;
+                margin-bottom: 25px;
+            }
+
+            #descripcion p:first-of-type {
+                font-size: 25px;
+            }
+
+            #imgsup img {
+                width: 100%;
+                height: 190px;
+            }
+
+            .row {
+                display: block;
+            }
+
+            .col-lg-3 {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .programas:nth-child(2)>img {
+                width: 100%;
+                height: 190px;
+                float: none;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .programas:nth-child(2) {
+                min-height: auto;
+            }
+
+            .tarjetas {
+                display: block;
+            }
+
+            .tarjeta {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="superior">
+
+        <div id="encabezado">
+
+            <nav>
+
+                <img src="retodiag/images (4).jpg" alt="" id="logo">
+
+                <div>
+                    <h1 class="display-4">Cafe Aroma</h1>
+                </div>
+
+                <ul>
+                    <li><a href="Ejemplo03_S4.html">Inicio</a></li>
+                    <li><a href="Ejemplo02_S5.html">Menu</a></li>
+                    <li><a href="Nosotros.html">Nosotros</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+
+            </nav>
+
+            <div id="imgsup">
+
+                <div id="descripcion">
+
+                    <h1>Bienvenidos a Cafe Aroma</h1>
+
+                    <p>Un buen cafe hace mejor tu dia</p>
+
+                    <p>Cafe recien preparado,postres artesanales y momentos para disfrutar.</p>
+
+                    <a class="navbar-brand" href="Ejemplo02_S5.html">ver menu</a>
+
+                </div>
+
+                <img src="retodiag/images (3).jpg" alt="" width="600" height="350">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="contenido">
+
+        <div class="programas">
+
+            <h1>nuestro favoritos</h1>
+
+            <h1>lo mas pedido</h1>
+
+            <p>
+                descrubre nuestros productos mas pedidos y favoritos de nuestros clientes, cafe recien preparado,
+                postres artesanales y momentos para disfrutar.
+            </p>
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="card">
+
+                        <img src="retodiag/WhatsApp Image 2026-08-25 at 6.01.31 PM.jpeg" alt="" class="card-img-top">
+
+                        <div class="card-body">
+
+                            <h5 class="border-bottom border-2">Cafe americano</h5>
+
+                            <p>cafe instenso y aromatico preparado al momento</p>
+
+                            <p>s/8.00</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="card">
+
+                        <img src="retodiag/WhatsApp Image 2026-08-25 at 6.00.52 PM.jpeg" alt="" class="card-img-top">
+
+                        <div class="card-body">
+
+                            <h5 class="border-bottom border-2">croissant</h5>
+
+                            <p>croissant recien horneado con mantequilla</p>
+
+                            <p>s/7.00</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="card">
+
+                        <img src="retodiag/WhatsApp Image 2026-08-25 at 6.01.02 PM.jpeg" alt="" class="card-img-top">
+
+                        <div class="card-body">
+
+                            <h5 class="border-bottom border-2">Pastel de Chocolate</h5>
+
+                            <p>Delicioso pastel de chocolate con salsa de caramelo</p>
+
+                            <p>s/10.00</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="boton">
+                <a href="Ejemplo02_S5.html">Ver todo menu</a>
+            </p>
+
+        </div>
+
+
+        <div class="programas">
+
+            <img src="retodiag/images (1).jpg" alt="">
+
+            <h1>NUestra historia</h1>
+
+            <h1>Un espacio para disfrutar </h1>
+
+            <p>
+                Cafe aroma nacio con una idea sencilla crear un lugar donde las personas puedan disfrutar un buen cafe y
+                sentirse como en casa.
+            </p>
+
+            <p>
+                Trabajamos con ingredientes seleccionados y productos preparados.
+            </p>
+
+            <p class="boton">
+                <a href="Nosotros.html">Conocenos</a>
+            </p>
+
+        </div>
+
+
+        <div class="programas">
+
+            <h1>¿Por qué cafe aroma?</h1>
+
+            <h1>Mas que una cafeteria</h1>
+
+            <div class="tarjetas">
+
+                <div class="tarjeta">
+
+                    <h3>Cafe de calidad</h3>
+
+                    <p>
+                        Seleccionamos granos de excelente calidad.
+                    </p>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h3>Productos frescos</h3>
+
+                    <p>
+                        Nuestros productos son preparados diariamente.
+                    </p>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h3>Hecho con cariño</h3>
+
+                    <p>
+                        Cada detalle esta pensado para nuestros clientes.
+                    </p>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h3>Espacio comodo</h3>
+
+                    <p>
+                        Un lugar ideal para estudiar, trabajar o conversar.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <p class="boton">
+                <a href="Contacto.html">Mas Informacion</a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="parte-final">
+
+        <h1>¿Listo para disfrutar un buen café?</h1>
+
+        <p>Visitanos y descubre tu nuevo lugar favorito.</p>
+
+        <a href="Contacto.html">VISITANOS</a>
+
+    </section>
+
+
+    <footer>
+
+        Yuri - 2026
+
+    </footer>
+
+</body>
+
+</html>

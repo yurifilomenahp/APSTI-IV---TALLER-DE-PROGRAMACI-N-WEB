@@ -1,0 +1,291 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f2f2f2;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+/* =========================================
+   BARRA SUPERIOR
+========================================= */
+
+.barra-superior{
+    background:#2f4728;
+    color:white;
+    padding:10px 40px;
+    display:flex;
+    justify-content:space-between;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo{
+    background:rgb(95,136,111);
+    padding:20px 80px;
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.logo img{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+}
+
+.logo h2{
+    font-size:56px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+/* =========================================
+   NAVEGACIÓN
+========================================= */
+
+nav{
+    background:#2c3e50;
+    padding:15px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+nav button{
+    color:white;
+    width:100%;
+}
+
+/* =========================================
+   MASTHEAD
+========================================= */
+
+.masthead{
+    background:#323f1c;
+    color:white;
+    text-align:center;
+    padding:50px;
+}
+
+.masthead h1{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.carousel-item img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+
+.contenedor{
+    width:90%;
+    max-width:1200px;
+    margin:30px auto;
+    display:flex;
+    gap:30px;
+}
+
+main{
+    background:rgb(96,158,71);
+    padding:30px;
+    flex:3;
+}
+
+aside{
+    background:white;
+    padding:25px;
+    flex:1;
+}
+
+/* =========================================
+   GALERÍA DE COMIDAS (RETO 2)
+========================================= */
+
+div.comidas{
+    margin-top:25px;
+}
+
+article.comidas{
+    background:white;
+    border-radius:12px;
+    padding:15px;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+    transition:.3s;
+    height:100%;
+}
+
+article.comidas:hover{
+    transform:scale(1.03);
+}
+
+article.comidas img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+article.comidas h3{
+    text-align:center;
+    margin-bottom:10px;
+    color:#2f4728;
+}
+
+article.comidas p{
+    font-size:14px;
+    text-align:justify;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+.sub-footer{
+    background:#111;
+    color:#aaa;
+    text-align:center;
+    padding:15px;
+}
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width:992px){
+
+    .logo{
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+    }
+
+    .logo h2{
+        font-size:36px;
+    }
+
+    .contenedor{
+        flex-direction:column;
+    }
+
+    aside{
+        width:100%;
+    }
+
+    .carousel-item img{
+        height:350px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE CELULAR
+========================================= */
+
+@media (max-width:768px){
+
+    .barra-superior{
+        flex-direction:column;
+        text-align:center;
+        gap:8px;
+        padding:10px;
+    }
+
+    .logo{
+        flex-direction:column;
+        text-align:center;
+        padding:15px;
+    }
+
+    .logo h2{
+        font-size:28px;
+    }
+
+    .masthead{
+        padding:25px 15px;
+    }
+
+    .masthead h1{
+        font-size:28px;
+    }
+
+    nav ul{
+        flex-direction:column !important;
+        gap:10px !important;
+    }
+
+    nav li,
+    nav button{
+        width:100%;
+    }
+
+    .contenedor{
+        width:95%;
+        flex-direction:column;
+    }
+
+    main,
+    aside{
+        width:100%;
+    }
+
+    aside{
+        margin-top:20px;
+    }
+
+    .carousel-item img{
+        height:220px;
+    }
+}
+/* =========================================
+   RETO 3 - LANDING PAGE
+========================================= */
+
+.hero{
+    background: url("vista.jpg.jpeg") center/cover;
+    padding:120px 20px;
+}
+
+.hero h1{
+    font-size:48px;
+    font-weight:bold;
+}
+
+.hero p{
+    font-size:22px;
+}
+
+.cta-final{
+    background:#2f4728;
+}
